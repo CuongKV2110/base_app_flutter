@@ -2,9 +2,9 @@ import 'package:base_app/page/home_page/home_page.dart';
 import 'package:base_app/page/menu_page/menu_page.dart';
 import 'package:base_app/page/search_page/search_page.dart';
 import 'package:base_app/page/setting_page/setting_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_config/flutter_config.dart';
+
+import '../../constants/constants.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colorGrayd2,
       body: PageView(
         controller: _pageController,
         children: const [

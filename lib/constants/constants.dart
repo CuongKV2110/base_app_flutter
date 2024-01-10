@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/svg.dart';
-
-import 'gen/assets.gen.dart';
 
 const kPadding = {
   0: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -17,6 +13,15 @@ const hSpaceItem = SizedBox(
 const hSpaceItem1 = SizedBox(
   height: 12,
 );
+const hSpaceItem2 = SizedBox(
+  height: 24,
+);
+const hSpaceItem3 = SizedBox(
+  height: 36,
+);
+const hSpaceItem4 = SizedBox(
+  height: 48,
+);
 
 const wSpaceItem = SizedBox(
   width: 6,
@@ -24,6 +29,15 @@ const wSpaceItem = SizedBox(
 
 const wSpaceItem1 = SizedBox(
   width: 12,
+);
+const wSpaceItem2 = SizedBox(
+  width: 24,
+);
+const wSpaceItem3 = SizedBox(
+  width: 36,
+);
+const wSpaceItem4 = SizedBox(
+  width: 48,
 );
 
 const Color colorWhiteF0 = Color(0xffF0F4F5);
@@ -33,6 +47,7 @@ const Color colorBlue00 = Color(0xff008dff);
 const Color colorGreen00 = Color(0xff00ff2c);
 const Color colorYellow00 = Color(0xffffdd00);
 const Color colorGray00 = Color(0xffa8a8a8);
+const Color colorGrayd2 = Color(0xffefefef);
 
 // Size
 const double appBarIconHeight = 30;

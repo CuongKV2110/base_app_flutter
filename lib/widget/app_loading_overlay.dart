@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_overlay/loading_overlay.dart';
-
 import 'app_loading_widget.dart';
 
 class AppLoadingOverlay extends StatefulWidget {
