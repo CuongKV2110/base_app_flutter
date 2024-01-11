@@ -119,4 +119,17 @@ class UserService extends BaseApiService {
       rethrow;
     }
   }
+
+  Future<bool> deleteCourse(String id) async {
+    try {
+      final response = await dio.delete('course/$id');
+      if (response.data == 'success') {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

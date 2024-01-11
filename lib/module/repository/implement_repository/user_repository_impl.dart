@@ -34,6 +34,11 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   @override
+  Future<bool> deleteCourse(String id) {
+    return userService.deleteCourse(id);
+  }
+
+  @override
   Future<bool> createCourse(
       String name, String type, String price, String description) {
     return userService.createCourse(name, type, price, description);

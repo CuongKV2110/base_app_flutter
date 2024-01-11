@@ -21,6 +21,18 @@ class HomeBloc extends Cubit<HomeState> {
     }
   }
 
+  Future<bool> deleteCourse(String id) async {
+    emit(HomeLoading());
+    try {
+      final response = await userRepository.deleteCourse(id);
+      emit(HomeSuccess());
+      return response;
+    } catch (e) {
+      emit(HomeError());
+      rethrow;
+    }
+  }
+
   void dispose() {
     close();
   }

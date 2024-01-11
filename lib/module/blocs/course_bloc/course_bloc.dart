@@ -7,19 +7,17 @@ class CourseBloc extends Cubit<CourseState> {
   CourseBloc() : super(CourseInitial());
   final userRepository = GetIt.instance.get<UserRepository>();
 
-  // Future<bool> Course(
-  //     String name, String type, String price, String description) async {
-  //   emit(CourseLoading());
-  //   try {
-  //     // final response =
-  //     //     await userRepository.Course(name, type, price, description);
-  //     emit(CourseSuccess());
-  //     return response;
-  //   } catch (e) {
-  //     emit(CourseError());
-  //     rethrow;
-  //   }
-  // }
+  Future<bool> deleteCourse(String id) async {
+    emit(CourseLoading());
+    try {
+      final response = await userRepository.deleteCourse(id);
+      emit(CourseSuccess());
+      return response;
+    } catch (e) {
+      emit(CourseError());
+      rethrow;
+    }
+  }
 
   void dispose() {
     close();

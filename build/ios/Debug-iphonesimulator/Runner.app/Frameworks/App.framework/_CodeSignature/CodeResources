@@ -10,15 +10,15 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		HrNlMQC5z7kcNdynOv5YB4YNpxU=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		vKJkVIcw+LGHFnKJGwrQwCREv68=
+		508bTTsrGv1H9r1ylIjolfZ8D5g=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		fFCqEbXNeaI1tf3pTk6wKgtApTM=
+		AK8O9t+sUdeYZxqbUMhYVcG7nYo=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -30,11 +30,15 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		r3ndTgI/4F3+9EhFo3JkuDityio=
+		moWTfUvWoKRQ4aE9FiR0JlrfTvs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>flutter_assets/packages/ionicons/assets/fonts/Ionicons.ttf</key>
+		<data>
+		/EJHFXmnU56Me3oZsYSgb0N3m6w=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -51,21 +55,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			Uy56eH19vbjEcxPiWRBrUu4FXX0tzEJ8S88XUKBJ//s=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
+			UuXyLTmYAc9WLBfEMlCi+feoyueBk7UKGXNPayaCNKY=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DY7UssNLBJ9fiV83XZQ8cN8bYFvBiBfZ0y4EIGCZEzw=
+			4r1DdTN0LdoST0fP4T0FQf7zpYa5G/vnKwCTvemJYSc=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -86,7 +90,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WE/Qsb2YLSBESUqq9UsP/qz3Ae7wKGb4Q3yE35WVXn0=
+			nA4qDnOfuVnnZ58opdETm8cbjn6NdYJtupk65kzgLpw=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -94,6 +98,13 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/ionicons/assets/fonts/Ionicons.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ToRDAanVAVKp0pYTTq214ldneVu8hwlDnd1QxgoqT8s=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>

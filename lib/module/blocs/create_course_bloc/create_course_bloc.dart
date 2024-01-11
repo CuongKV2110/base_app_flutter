@@ -22,6 +22,20 @@ class CreateCourseBloc extends Cubit<CreateCourseState> {
     }
   }
 
+  Future<bool> a(
+      String name, String type, String price, String description) async {
+    emit(CreateCourseLoading());
+    try {
+      final response =
+          await userRepository.createCourse(name, type, price, description);
+      emit(CreateCourseSuccess());
+      return response;
+    } catch (e) {
+      emit(CreateCourseError());
+      rethrow;
+    }
+  }
+
   void dispose() {
     close();
   }

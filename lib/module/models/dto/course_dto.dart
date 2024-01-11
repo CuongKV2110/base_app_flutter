@@ -17,6 +17,8 @@ class CourseDto extends CourseEntity {
   String price;
   @override
   String image;
+  @override
+  bool? deleted;
 
   CourseDto({
     required this.id,
@@ -25,6 +27,7 @@ class CourseDto extends CourseEntity {
     required this.description,
     required this.price,
     required this.image,
+    this.deleted,
   });
 
   factory CourseDto.fromJson(Map<String, dynamic> json) =>

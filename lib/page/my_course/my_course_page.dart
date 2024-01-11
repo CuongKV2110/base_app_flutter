@@ -64,23 +64,43 @@ class _MyCoursePageState extends State<MyCoursePage> {
       List<CourseDto> listCourse = _bloc.list;
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 28.0),
-        child: ListView.separated(
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                hSpaceItem1,
-                CourseItemWidget(courseDto: listCourse[index])
-              ],
-            );
-          },
-          separatorBuilder: (context, index) {
-            return hSpaceItem1;
-          },
-          itemCount: listCourse.length,
-        ),
+        child: listCourse.isEmpty
+            ? _emptyItem()
+            : ListView.separated(
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      hSpaceItem1,
+                      GestureDetector(
+                        onTap: () async {
+                          var isSuccess =
+                              await _bloc.deleteCourse(listCourse[index].id);
+
+                          if (isSuccess) {
+                            _bloc.getListPost();
+                          } else {
+                            print('Error deleted');
+                          }
+                        },
+                        child: CourseItemWidget(courseDto: listCourse[index]),
+                      )
+                    ],
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return hSpaceItem1;
+                },
+                itemCount: listCourse.length,
+              ),
       );
     } else {
       return const SizedBox();
     }
+  }
+
+  _emptyItem() {
+    return Center(
+      child: Text("Khong co khoa hoc nao"),
+    );
   }
 }

@@ -20,6 +20,18 @@ class EditCourseBloc extends Cubit<EditCourseState> {
     }
   }
 
+  Future<bool> heh(CourseDto courseUpdate) async {
+    emit(EditCourseLoading());
+    try {
+      final response = await userRepository.updateCourse(courseUpdate);
+      emit(EditCourseSuccess());
+      return response;
+    } catch (e) {
+      emit(EditCourseError());
+      rethrow;
+    }
+  }
+
   void dispose() {
     close();
   }
