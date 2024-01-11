@@ -1,5 +1,4 @@
 import 'package:base_app/module/models/dto/course_dto.dart';
-import 'package:base_app/page/home_page/course_item_widget.dart';
 import 'package:base_app/widget/app_loading_overlay.dart';
 import 'package:base_app/widget/appbar_widget.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +58,6 @@ class _HomePageState extends State<HomePage> {
                 return Column(
                   children: [
                     hSpaceItem1,
-                    CourseItemWidget(courseDto: listCourse[index])
                   ],
                 );
               },

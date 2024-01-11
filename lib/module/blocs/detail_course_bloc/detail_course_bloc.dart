@@ -13,9 +13,9 @@ class DetailCourseBloc extends Cubit<DetailCourseState> {
   ) async {
     emit(DetailCourseLoading());
     try {
-      final response = await userRepository.getDetailCourse(id);
-      emit(DetailCourseSuccess());
-      return response;
+      final courseDto = await userRepository.getDetailCourse(id);
+      emit(DetailCourseSuccess(courseDto));
+      return courseDto;
     } catch (e) {
       emit(DetailCourseError());
       rethrow;

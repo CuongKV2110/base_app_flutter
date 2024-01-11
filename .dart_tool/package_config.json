@@ -326,6 +326,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "ionicons",
+      "rootUri": "file:///Users/cuongkv-phoenix/flutter/.pub-cache/hosted/pub.dartlang.org/ionicons-0.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/cuongkv-phoenix/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
@@ -716,7 +722,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2024-01-10T10:35:55.328219Z",
+  "generated": "2024-01-11T07:35:28.934690Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

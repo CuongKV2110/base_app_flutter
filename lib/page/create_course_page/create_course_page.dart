@@ -5,7 +5,7 @@ import 'package:base_app/widget/appbar_widget.dart';
 import 'package:base_app/widget/keyboard_dismiss.dart';
 import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
-import '../../module/blocs/course_bloc/course_bloc.dart';
+import '../../module/blocs/create_course_bloc/create_course_bloc.dart';
 
 class CreateCoursePage extends StatefulWidget {
   const CreateCoursePage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class CreateCoursePage extends StatefulWidget {
 }
 
 class _CreateCoursePageState extends State<CreateCoursePage> {
-  final CourseBloc _bloc = CourseBloc();
+  final CreateCourseBloc _bloc = CreateCourseBloc();
   final _formKey = GlobalKey<FormState>();
   final nameTextController = TextEditingController();
   final typeTextController = TextEditingController();
@@ -33,6 +33,12 @@ class _CreateCoursePageState extends State<CreateCoursePage> {
         child: Scaffold(
           appBar: AppBarWidget(
             title: "Create Course",
+            leadingWidget: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: backAppBarIcon,
+            ),
           ),
           body: WKeyboardDismiss(
             child: Padding(

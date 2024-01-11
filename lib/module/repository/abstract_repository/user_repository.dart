@@ -14,5 +14,5 @@ abstract class UserRepository {
   Future<bool> updateCourse(CourseDto courseUpdate);
 
   Future<bool> createCourse(
-      String name, String type, String price, String detail);
+      String name, String type, String price, String description);
 }

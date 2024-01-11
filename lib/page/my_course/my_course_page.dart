@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../constants/constants.dart';
 import '../../module/blocs/Home_bloc/Home_bloc.dart';
 import '../../module/blocs/Home_bloc/home_state.dart';
-import '../home_page/course_item_widget.dart';
+import 'course_item_widget.dart';
 
 class MyCoursePage extends StatefulWidget {
   const MyCoursePage({Key? key}) : super(key: key);
@@ -36,7 +36,15 @@ class _MyCoursePageState extends State<MyCoursePage> {
               isLoading: state is HomeLoading,
               child: SafeArea(
                 child: Scaffold(
-                  appBar: AppBarWidget(title: 'My Course Page'),
+                  appBar: AppBarWidget(
+                    title: 'My Course Page',
+                    leadingWidget: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: backAppBarIcon,
+                    ),
+                  ),
                   body: _build(state),
                 ),
               ),

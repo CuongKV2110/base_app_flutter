@@ -83,8 +83,7 @@ class UserService extends BaseApiService {
         "description": courseUpdate.description,
         "image": courseUpdate.image
       };
-      final response =
-          await dio.put('course/${courseUpdate.id}/update', data: data);
+      final response = await dio.put('course/${courseUpdate.id}', data: data);
       if (response.data == 'success') {
         print('OK');
         return true;
@@ -98,16 +97,17 @@ class UserService extends BaseApiService {
   }
 
   Future<bool> createCourse(
-      String name, String type, String price, String detail) async {
+      String name, String type, String price, String description) async {
     try {
       final data = {
         "name": name,
         "type": type,
         "price": price,
-        "detail": detail,
-        "image": "fake_url"
+        "description": description,
+        "image":
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQor9vCOctnpA5k8xjEEEJaC7gshdSE7PBRPg&usqp=CAUhu"
       };
-      final response = await dio.post('create_course', data: data);
+      final response = await dio.post('course/create_course', data: data);
       if (response.data == 'success') {
         print('OK');
         return true;

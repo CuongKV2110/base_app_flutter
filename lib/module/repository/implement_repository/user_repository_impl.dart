@@ -35,7 +35,7 @@ class UserRepositoryImpl extends UserRepository {
 
   @override
   Future<bool> createCourse(
-      String name, String type, String price, String detail) {
-    return userService.createCourse(name, type, price, detail);
+      String name, String type, String price, String description) {
+    return userService.createCourse(name, type, price, description);
   }
 }

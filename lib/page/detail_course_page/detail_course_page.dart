@@ -55,6 +55,10 @@ class _DetailCoursePageState extends State<DetailCoursePage> {
         child: Text("Error"),
       );
     } else if (state is DetailCourseSuccess) {
+      print(state.courseDto.name);
+      print(state.courseDto.type);
+      print(state.courseDto.description);
+      print(state.courseDto.price);
       return const Text('OK');
     } else {
       return const SizedBox();

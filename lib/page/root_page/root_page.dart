@@ -3,8 +3,10 @@ import 'package:base_app/page/menu_page/menu_page.dart';
 import 'package:base_app/page/search_page/search_page.dart';
 import 'package:base_app/page/setting_page/setting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 import '../../constants/constants.dart';
+import '../course_page/course_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -27,8 +29,8 @@ class _RootPageState extends State<RootPage> {
         children: const [
           HomePage(),
           SearchPage(),
+          CoursePage(),
           MenuPage(),
-          SettingPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -43,24 +45,22 @@ class _RootPageState extends State<RootPage> {
           },
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
+              icon: Icon(Ionicons.home_outline),
               label: "Home",
               backgroundColor: Colors.black,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Ionicons.search_outline),
               label: "Search",
               backgroundColor: Colors.black,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.video_library_outlined),
-              label: "Menu",
+              icon: Icon(Ionicons.book_outline),
+              label: "Course",
               backgroundColor: Colors.black,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined),
+              icon: Icon(Ionicons.settings_outline),
               label: "Setting",
               backgroundColor: Colors.black,
             ),

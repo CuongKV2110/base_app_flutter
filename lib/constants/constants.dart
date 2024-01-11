@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 const kPadding = {
   0: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -53,4 +54,4 @@ const Color colorGrayd2 = Color(0xffefefef);
 const double appBarIconHeight = 30;
 const double appBarIconWidth = 30;
 
-final backAppBarIcon = Icon(Icons.arrow_back);
+final backAppBarIcon = const Icon(Ionicons.chevron_back_outline);
