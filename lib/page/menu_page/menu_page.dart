@@ -1,5 +1,6 @@
 import 'package:base_app/page/menu_page/log_out_widget.dart';
 import 'package:base_app/page/menu_page/profile_widget.dart';
+import 'package:base_app/page/person_detail_page/person_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../constants/constants.dart';
@@ -44,6 +45,13 @@ class _MenuPageState extends State<MenuPage> {
                 MenuItemWidget(
                   title: "Personals Detail",
                   icon: Icon(Ionicons.person_outline),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return PersonDetailPage();
+                      }),
+                    );
+                  },
                 ),
                 hSpaceItem1,
                 MenuItemWidget(

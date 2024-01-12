@@ -49,6 +49,7 @@ const Color colorGreen00 = Color(0xff00ff2c);
 const Color colorYellow00 = Color(0xffffdd00);
 const Color colorGray00 = Color(0xffa8a8a8);
 const Color colorGrayd2 = Color(0xffefefef);
+const Color appBackground = Color(0xffefefef);
 
 // Size
 const double appBarIconHeight = 30;
