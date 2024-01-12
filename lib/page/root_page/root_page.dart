@@ -60,8 +60,8 @@ class _RootPageState extends State<RootPage> {
               backgroundColor: Colors.black,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Ionicons.settings_outline),
-              label: "Setting",
+              icon: Icon(Ionicons.list_circle_outline),
+              label: "Menu",
               backgroundColor: Colors.black,
             ),
           ]),
