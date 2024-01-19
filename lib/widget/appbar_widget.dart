@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'keyboard_dismiss.dart';
 
-class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   String title;
   Color? titleColor;
   Widget? leadingWidget;

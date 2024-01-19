@@ -137,12 +137,15 @@ class _EditCoursePageState extends State<EditCoursePage> {
     final imageCourse = imageTextController.text;
     final descriptionCourse = descriptionTextController.text;
     final CourseDto courseUpdate = CourseDto(
-        id: widget.courseDto.id,
-        type: typeCourse,
-        name: nameCourse,
-        description: descriptionCourse,
-        price: priceCourse,
-        image: imageCourse);
+      id: widget.courseDto.id,
+      type: typeCourse,
+      name: nameCourse,
+      description: descriptionCourse,
+      price: priceCourse,
+      image: imageCourse,
+      userPost: 'fsdfdsfds',
+      createdAt: 'Dàdsds',
+    );
     try {
       bool success = await _bloc.updateCourse(courseUpdate);
       if (success) {

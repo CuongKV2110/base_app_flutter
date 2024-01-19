@@ -13,6 +13,8 @@ CourseDto _$CourseDtoFromJson(Map<String, dynamic> json) => CourseDto(
       description: json['description'] as String,
       price: json['price'] as String,
       image: json['image'] as String,
+      userPost: json['userPost'] as String,
+      createdAt: json['createdAt'] as String,
       deleted: json['deleted'] as bool?,
     );
 
@@ -23,5 +25,7 @@ Map<String, dynamic> _$CourseDtoToJson(CourseDto instance) => <String, dynamic>{
       'description': instance.description,
       'price': instance.price,
       'image': instance.image,
+      'userPost': instance.userPost,
+      'createdAt': instance.createdAt,
       'deleted': instance.deleted,
     };

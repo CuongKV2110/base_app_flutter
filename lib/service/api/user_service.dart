@@ -55,6 +55,8 @@ class UserService extends BaseApiService {
         final List<dynamic> data = response.data;
         List<CourseDto> listCourse =
             data.map((e) => CourseDto.fromJson(e)).toList();
+        print('Data');
+        print(listCourse);
         return listCourse;
       } else {
         print('Invalid response format');

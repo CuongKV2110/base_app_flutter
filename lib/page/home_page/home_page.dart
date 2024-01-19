@@ -55,11 +55,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 28.0),
             child: ListView.separated(
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    hSpaceItem1,
-                  ],
-                );
+                return Text(listCourse[index].name);
               },
               separatorBuilder: (context, index) {
                 return hSpaceItem1;

@@ -18,6 +18,10 @@ class CourseDto extends CourseEntity {
   @override
   String image;
   @override
+  String userPost;
+  @override
+  String createdAt;
+  @override
   bool? deleted;
 
   CourseDto({
@@ -27,6 +31,8 @@ class CourseDto extends CourseEntity {
     required this.description,
     required this.price,
     required this.image,
+    required this.userPost,
+    required this.createdAt,
     this.deleted,
   });
 

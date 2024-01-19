@@ -20,7 +20,7 @@ dependencies:
   get_it:
   shared_preferences:
   flutter_svg:
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.1
   flutter_config: ^2.0.2
   loading_overlay: ^0.3.0
   flutter_spinkit: ^5.1.0
