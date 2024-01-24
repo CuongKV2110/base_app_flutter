@@ -1,8 +1,9 @@
 import 'package:base_app/module/models/dto/course_dto.dart';
-import 'package:base_app/widget/app_loading_overlay.dart';
 import 'package:base_app/widget/appbar_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_carousel_slider/carousel_slider.dart';
 import '../../constants/constants.dart';
 import '../../module/blocs/Home_bloc/Home_bloc.dart';
 import '../../module/blocs/Home_bloc/home_state.dart';
@@ -16,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final HomeBloc _bloc = HomeBloc();
-
+  CarouselSliderController sliderController = CarouselSliderController();
   @override
   void initState() {
     super.initState();
@@ -25,15 +26,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HomeBloc>.value(
-      value: _bloc,
-      child: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
-          return AppLoadingOverlay(
-            child: _build(state),
-            isLoading: state is HomeLoading,
-          );
-        },
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: appBackground,
+        body: BlocProvider<HomeBloc>.value(
+          value: _bloc,
+          child: BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              return _build(state);
+            },
+          ),
+        ),
       ),
     );
   }
@@ -45,23 +48,87 @@ class _HomePageState extends State<HomePage> {
       );
     } else if (state is HomeSuccess) {
       List<CourseDto> listCourse = _bloc.list;
-      return SafeArea(
-        child: Scaffold(
-          backgroundColor: colorGrayd2,
-          appBar: AppBarWidget(
-            title: "HOME PAGE",
-          ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0),
-            child: ListView.separated(
-              itemBuilder: (context, index) {
-                return Text(listCourse[index].name);
-              },
-              separatorBuilder: (context, index) {
-                return hSpaceItem1;
-              },
-              itemCount: listCourse.length,
-            ),
+      return SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(22.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 200,
+                child: CarouselSlider.builder(
+                  unlimitedMode: true,
+                  controller: sliderController,
+                  slideBuilder: (index) {
+                    return Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: CachedNetworkImage(
+                              width: 300,
+                              height: 180,
+                              imageUrl: listCourse[index].image,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                  itemCount: listCourse.length,
+                  initialPage: 0,
+                  enableAutoSlider: false,
+                ),
+              ),
+              hSpaceItem3,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Popular",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                  ),
+                  Text("See all"),
+                ],
+              ),
+              hSpaceItem2,
+              SizedBox(
+                height: 360,
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 22.0,
+                    mainAxisSpacing: 8.0,
+                  ),
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.greenAccent,
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Center(
+                        child: Text(
+                          'Item $index',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       );
